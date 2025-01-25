@@ -130,10 +130,42 @@ rsvp_count()
 #   - `"double"`: $75/night.
 #   - `"suite"`: $120/night.
 
+
+
+def calculate_room_price(nights,room_type):
+    if room_type =="single":
+        price=nights*50
+        
+    elif room_type =="double":
+        price=nights*75
+        
+    elif room_type =="suite":
+        price=nights*120
+    print(f"{nights} nights for {room_type} is {price}$ USD")
+        
+    
+calculate_room_price(5,"single")
+calculate_room_price(9,"double")
+calculate_room_price(2,"suite")
+
+
+
+
 # 7. Fitness Tracker Steps Goal
 # Write a function `steps_to_goal(steps_taken, goal_steps=10000)` that:
 # - Takes the number of steps taken so far and calculates how many more steps are needed 
 #   to reach the daily goal (default is 10,000 steps).
+
+def steps_to_goal(steps_taken,goal_steps=10000):
+    remaining=goal_steps-steps_taken
+    return remaining
+
+print(steps_to_goal(5346))
+print(steps_to_goal(15000))
+
+
+
+
 
 # 8. Packing List Helper
 # Write a function `packing_list(items, days)` that:
@@ -144,6 +176,18 @@ rsvp_count()
 # Socks: 5
 # Toothbrush: 1
 
+
+def packing_list(items, days):
+    for item in items:
+        print(f"{item}: {days}")
+
+
+packing_list(["Shirts", "Socks", "Pants"], 5)
+
+
+
+
+
 # 9. Password Strength Checker
 # Write a function `password_strength(password)` that:
 # - Checks the strength of a password based on:
@@ -152,7 +196,52 @@ rsvp_count()
 #   - Inclusion of special characters (e.g., `!@#$`).
 # - Prints `"Strong"`, `"Moderate"`, or `"Weak"`.
 
+
+def password_strength(password):
+    special_character=("!@#$")
+    numbers=("1234567890")
+    
+    has_special=any(char in special_character for char in password)
+    has_numbers=any(char in numbers for char in password)
+    
+    
+    if len(password)>8 and has_special  and has_numbers :
+        print((f"{password} is a Strong Password"))
+    elif len(password)>8 and has_special :
+        print(f"{password} is a moderate Password!")
+    else:
+        print(f"{password} is a weak password!")
+        
+    
+        
+        
+        
+password_strength("can1")
+password_strength("can123456")
+password_strength("hello@world")
+password_strength("can1@!45678$")
+
+
+
 # 10. Restaurant Waitlist Manager
 # Write a function `waitlist_manager(waitlist, new_customer)` that:
 # - Takes a list of current waitlisted customers and a new customer name.
 # - Adds the new customer to the list and prints the updated waitlist.
+
+
+def waitlist_manager(waitlist,new_customer):
+    
+    print(f"{waitlist} currently in waitlist.And new customer is {new_customer}")
+    waitlist.append(new_customer)
+    print(f"Updated Waitlist:",waitlist)
+        
+        
+        
+waitlist_manager(["asli","Lyndsey","Remy"],"can")
+    
+    
+    
+    
+    
+    
+

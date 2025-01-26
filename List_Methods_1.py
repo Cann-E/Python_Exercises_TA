@@ -112,6 +112,17 @@ numbers = [1, 2, 2, 3, 4, 4, 5]
 unique_numbers = list(set(numbers)) #Removes Duplicates 
 print(unique_numbers)
 
+#15 Common Elements
+
+lst_1 = [1, 2, 3, 4]
+lst_2 = [3, 4, 5, 6]
+
+def common_elements(lst1,lst2):
+    return list(set(lst1) & set(lst2)) #intersection of the set1 & set2
+
+common=common_elements(lst_1,lst_2)
+print(common)
+
 
 
 

@@ -57,10 +57,32 @@ print(find_second_largest(test3))
 # and returns a new list sorted in ascending order.
 # Test it with the lists: [3, 1, 4] and [5, 2, 6].
 
+def merge_and_sort(lst1,lst2):
+    newlist=lst1+lst2
+    newlist.sort()
+    return newlist
+
+lst_1=[3, 1, 4]
+lst_2=[5, 2, 6]
+
+new=merge_and_sort(lst_1,lst_2)
+print(new)
+
+
+
 # 6. Find Common Elements
 # Write a function `common_elements(lst1, lst2)` that takes two lists 
 # and returns a new list containing only the elements that are present in both lists.
 # Test it with the lists: [1, 2, 3, 4] and [3, 4, 5, 6].
+
+def common_elements(lst1,lst2):
+    return list(set(lst1) & set(lst2))
+
+lst_1 = [1, 2, 3, 4]
+lst_2 = [3, 4, 5, 6]
+
+common=common_elements(lst_1,lst_2)
+print(common)
 
 # 7. Separate Even and Odd Numbers
 # Write a function `separate_even_odd(lst)` that takes a list of numbers 

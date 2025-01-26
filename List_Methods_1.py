@@ -124,6 +124,26 @@ common=common_elements(lst_1,lst_2)
 print(common)
 
 
+#16 For loop is to itirate over items in a collection
+
+numbers = [1, 2, 3, 4]
+
+for num in numbers: #for each number inside the numbers list
+    print(num)  #print each number
+    
+fruits=["apple","pear","watermelon"]
+
+for fruit in fruits:
+    print(fruit)
+    
+name = "Python"
+
+for char in name:
+    print(char)
+
+
+
+
 
 
 

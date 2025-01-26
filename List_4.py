@@ -89,6 +89,25 @@ print(common)
 # and returns two separate lists: one containing even numbers and the other containing odd numbers.
 # Test it with the list: [1, 2, 3, 4, 5, 6, 7, 8, 9].
 
+lst_5=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+def separate_even_odd(lst):
+    even=[]
+    odd=[]
+    for num in lst:
+        if num%2==0:
+            even.append(num)
+        else:
+            odd.append(num)
+    return even,odd
+    
+even,odd=separate_even_odd(lst_5)
+print(even)
+print(odd)
+        
+    
+    
+
 # 8. Find All Pairs That Add Up to a Target
 # Write a function `find_pairs(lst, target)` that finds and returns all pairs 
 # of numbers in the list that add up to the given target.

@@ -103,8 +103,15 @@ num = [12, 45, 7, 29, 30]
 def find_largest(lst):
     return max(lst)  # Use the built-in `max()` function to find the largest number
 
-# Test the function
-print(find_largest(num))  # Output: 45
+print(find_largest(num)) 
+
+
+#14 Set 
+
+numbers = [1, 2, 2, 3, 4, 4, 5]
+unique_numbers = list(set(numbers)) #Removes Duplicates 
+print(unique_numbers)
+
 
 
 

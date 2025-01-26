@@ -1,48 +1,45 @@
-# 1. Count Occurrences
-# Write a function `count_occurrences(lst, element)` that counts and returns 
-# the number of times `element` appears in the list.
-# Test it with the list: [1, 2, 3, 4, 2, 3, 2] and element 2.
 
-# 2. Remove Duplicates
-# Write a function `remove_duplicates(lst)` that takes a list as input 
-# and returns a new list with all duplicates removed.
-# Test it with the list: [1, 2, 2, 3, 4, 4, 5].
 
-# 3. Reverse a List
-# Write a function `reverse_list(lst)` that takes a list as input 
-# and returns the list in reverse order.
-# Test it with the list: [1, 2, 3, 4, 5].
+# 1. Create a List with a Range
+# Create a list called nums with all integers from 1 to 10 (inclusive) using the range() function.
+# Print the list.
 
-# 4. Find Second Largest
-# Write a function `find_second_largest(lst)` that returns the second largest 
-# number in the list. Assume the list has at least 2 unique numbers.
-# Test it with the list: [10, 20, 4, 45, 99].
+# 2. Reverse a List
+# Create a list called words with the elements: "sun", "moon", "stars".
+# Reverse the list using the reverse() method and print the updated list.
 
-# 5. Merge and Sort Lists
-# Write a function `merge_and_sort(lst1, lst2)` that takes two lists, merges them,
-# and returns a new list sorted in ascending order.
-# Test it with the lists: [3, 1, 4] and [5, 2, 6].
+# 3. Check Membership
+# Create a list called items with the elements: "pen", "notebook", "eraser", "ruler".
+# Check if "pen" is in the list using the in keyword and print the result.
 
-# 6. Find Common Elements
-# Write a function `common_elements(lst1, lst2)` that takes two lists 
-# and returns a new list containing only the elements that are present in both lists.
-# Test it with the lists: [1, 2, 3, 4] and [3, 4, 5, 6].
+# 4. Concatenate Two Lists
+# Create two lists:
+# list_a = [10, 20, 30]
+# list_b = [40, 50, 60].
+# Concatenate the two lists using the + operator and print the resulting list.
 
-# 7. Separate Even and Odd Numbers
-# Write a function `separate_even_odd(lst)` that takes a list of numbers 
-# and returns two separate lists: one containing even numbers and the other containing odd numbers.
-# Test it with the list: [1, 2, 3, 4, 5, 6, 7, 8, 9].
+# 5. Find the Maximum and Minimum
+# Create a list called temperatures with the elements: [25, 30, 28, 22, 35, 31].
+# Find and print the maximum and minimum values using max() and min().
 
-# 8. Find All Pairs That Add Up to a Target
-# Write a function `find_pairs(lst, target)` that finds and returns all pairs 
-# of numbers in the list that add up to the given target.
-# Test it with the list: [1, 2, 3, 4, 5] and target 6.
+# 6. Sort a List
+# Create a list called ages with the elements: [25, 22, 30, 18, 27].
+# Sort the list in ascending order using the sort() method and print the sorted list.
 
-# 9. Rotate List
-# Write a function `rotate_list(lst, k)` that rotates the list to the right by `k` positions.
-# Test it with the list: [1, 2, 3, 4, 5] and k = 2.
+# 7. Copy a List
+# Create a list called cities with the elements: "New York", "Paris", "Tokyo".
+# Create a copy of the list using the copy() method and print the copied list.
 
-# 10. Flatten a Nested List
-# Write a function `flatten_list(nested_lst)` that takes a nested list as input 
-# and returns a single flattened list. Assume the nested list can contain lists within lists.
-# Test it with the list: [[1, 2], [3, 4], [5, 6]].
+# 8. Find the Length of a List
+# Create a list called pets with the elements: "dog", "cat", "fish", "hamster", "bird".
+# Find and print the length of the list using the len() function.
+
+# 9. Multiply a List
+# Create a list called letters with the elements: "a", "b", "c".
+# Multiply the list by 3 using the * operator and print the resulting list.
+
+# 10. Insert an Element
+# Create a list called books with the elements: "Harry Potter", "The Hobbit", "1984".
+# Insert the element "Pride and Prejudice" at the second position using the insert() method.
+# Print the updated list.
+

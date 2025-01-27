@@ -113,11 +113,80 @@ print(odd)
 # of numbers in the list that add up to the given target.
 # Test it with the list: [1, 2, 3, 4, 5] and target 6.
 
+def find_pairs(lst,target):
+    pairs=[]
+    for i in range(len(lst)):
+        for j in range(i+1,len(lst)):
+            if lst[i]+lst[j]==target:
+                pairs.append((lst[i],lst[j]))
+    return pairs
+    
+    
+numbers_=[1, 2, 3, 4, 5]
+result=find_pairs(numbers_,6)
+print(result)
+
+
 # 9. Rotate List
 # Write a function `rotate_list(lst, k)` that rotates the list to the right by `k` positions.
 # Test it with the list: [1, 2, 3, 4, 5] and k = 2.
+
+def rotate_list(lst,k):
+    n=len(lst)
+    k=k%n
+    return lst[-k:],lst[:-k]
+
+a=[1, 2, 3, 4, 5]
+b=rotate_list(a,2)
+print(b)
+        
 
 # 10. Flatten a Nested List
 # Write a function `flatten_list(nested_lst)` that takes a nested list as input 
 # and returns a single flattened list. Assume the nested list can contain lists within lists.
 # Test it with the list: [[1, 2], [3, 4], [5, 6]].
+
+def flatten_list(nested_lst):
+    single_list=[]
+    for i in (nested_lst):
+        for j in i:
+            single_list.append(j)
+    return single_list
+
+c=[[1, 2], [3, 4], [5, 6]]
+d=flatten_list(c)
+print(d)
+
+
+#11. Write a function find_pairs(lst, target) that finds and returns all pairs of numbers from a list that add up to the given target.
+# Test it with the list [10, 20, 30, 40, 50, 60] and target 70.
+
+
+def find_pairs(lst,target):
+    pairs=[]
+    for i in range(len(lst)):
+        for j in range(i+1,len(lst)):
+            if lst[i]+lst[j]==target:
+                pairs.append((lst[i],lst[j]))
+    return pairs
+
+x=[10, 20, 30, 40, 50, 60]
+
+res=find_pairs(x,70)
+print(res)
+
+#12. Write a function find_pairs(lst, target) that finds and returns all pairs of numbers in the list that add up to the given target.
+
+# Test it with the list [3, 8, 12, 15, 7, 5, 10] and target 15.
+
+def find_pairs_1(lst,target):
+    pairs=[]
+    for i in range(len(lst)):
+        for j in range(i+1,len(lst)):
+            if lst[i]+lst[j]==target:
+                pairs.append((lst[i],lst[j]))
+    return pairs
+
+x=[3, 8, 12, 15, 7, 5, 10]
+res=find_pairs_1(x,15)
+print(res)

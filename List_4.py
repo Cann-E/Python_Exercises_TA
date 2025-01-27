@@ -134,7 +134,7 @@ print(result)
 def rotate_list(lst,k):
     n=len(lst)
     k=k%n
-    return lst[-k:],lst[:-k]
+    return lst[-k:] + lst[:-k]
 
 a=[1, 2, 3, 4, 5]
 b=rotate_list(a,2)

@@ -1,89 +1,86 @@
-# 1. Find Unique Elements
-# Write a function `find_unique(lst)` that returns a list of elements 
-# that appear only once in the input list.
-# Test it with: [1, 2, 2, 3, 4, 4, 5].
-# Expected Output: [1, 3, 5]
+# 1. Create a List
+# Write a function `create_list(n)` that creates and returns a list 
+# containing numbers from 1 to n.
+# Test it with: n = 5.
+# Expected Output: [1, 2, 3, 4, 5]
 
-def find_unique(lst):
-    return [x for x in lst if lst.count(x) == 1]
+# 2. Append Elements to a List
+# Write a function `append_to_list(lst, element)` that appends the given 
+# element to the list and returns the updated list.
+# Test it with: lst = [1, 2, 3], element = 4.
+# Expected Output: [1, 2, 3, 4]
 
-x = [1, 2, 2, 3, 4, 4, 5]
-unique = find_unique(x)
-print(unique)
+# 3. Extend a List
+# Write a function `extend_list(lst, elements)` that takes a list and 
+# a list of elements, and extends the original list with these elements.
+# Test it with: lst = [1, 2], elements = [3, 4].
+# Expected Output: [1, 2, 3, 4]
 
-# 2. Check if a List is Sorted
-# Write a function `is_sorted(lst)` that checks whether a list is sorted in ascending order.
-# Test it with: [1, 2, 3, 4, 5] and [1, 3, 2, 4, 5].
-# Expected Output: True for the first and False for the second.
+# 4. Remove an Element by Value
+# Write a function `remove_element(lst, element)` that removes the first 
+# occurrence of the specified element from the list.
+# Test it with: lst = [1, 2, 3, 2, 4], element = 2.
+# Expected Output: [1, 3, 2, 4]
 
-def is_sorted(lst):
-    if lst == sorted(lst):
-        return True
-    else:
-        return False
-    
-x1=[1, 2, 3, 4, 5]
-x2=[1, 3, 2, 4, 5]
+# 5. Insert an Element at a Specific Index
+# Write a function `insert_element(lst, index, element)` that inserts the 
+# given element at the specified index in the list.
+# Test it with: lst = [1, 2, 3], index = 1, element = 10.
+# Expected Output: [1, 10, 2, 3]
 
-print(is_sorted(x1))
-print(is_sorted(x2))
+# 6. Slice a List
+# Write a function `slice_list(lst, start, end)` that returns a slice 
+# of the list from the start index to the end index (exclusive).
+# Test it with: lst = [1, 2, 3, 4, 5], start = 1, end = 4.
+# Expected Output: [2, 3, 4]
 
-# 3. Find Missing Number
-# Write a function `find_missing(lst, n)` that finds the missing number 
-# in a list of integers from 1 to n.
-# Test it with: [1, 2, 4, 5] and n = 5.
-# Expected Output: 3.
+# 7. Count an Element in a List
+# Write a function `count_element(lst, element)` that returns the number 
+# of times the specified element appears in the list.
+# Test it with: lst = [1, 2, 3, 2, 4, 2], element = 2.
+# Expected Output: 3
 
-def find_missing(lst,n):
-    total_sum=n*(n+1)//2
-    actual_sum=sum(lst)
-    return total_sum-actual_sum
+# 8. Find Index of an Element
+# Write a function `find_index(lst, element)` that returns the index of 
+# the first occurrence of the specified element in the list.
+# Test it with: lst = [1, 2, 3, 2, 4], element = 2.
+# Expected Output: 1
 
-lsst=[1, 2, 4, 5]
+# 9. Sort a List in Ascending Order
+# Write a function `sort_list(lst)` that sorts the list in ascending order 
+# and returns it.
+# Test it with: lst = [4, 2, 5, 1, 3].
+# Expected Output: [1, 2, 3, 4, 5]
 
-a=find_missing(lsst,5)
-print(a)
-        
-        
-        
+# 10. Reverse a List
+# Write a function `reverse_list(lst)` that reverses the list and returns it.
+# Test it with: lst = [1, 2, 3, 4, 5].
+# Expected Output: [5, 4, 3, 2, 1]
 
-# 4. Count Even and Odd Numbers
-# Write a function `count_even_odd(lst)` that returns the count of even and odd numbers in a list.
-# Test it with: [1, 2, 3, 4, 5, 6].
-# Expected Output: (3, 3) (3 even, 3 odd).
+# 11. Multiply Each Element by a Constant
+# Write a function `multiply_by_constant(lst, constant)` that multiplies 
+# each element in the list by the given constant and returns the new list.
+# Test it with: lst = [1, 2, 3], constant = 2.
+# Expected Output: [2, 4, 6]
 
-# 5. Cumulative Sum of a List
-# Write a function `cumulative_sum(lst)` that returns a list where each element is 
-# the cumulative sum of the elements so far.
-# Test it with: [1, 2, 3, 4].
-# Expected Output: [1, 3, 6, 10].
+# 12. Filter Even Numbers
+# Write a function `filter_even(lst)` that filters out all even numbers 
+# from the list and returns the new list.
+# Test it with: lst = [1, 2, 3, 4, 5, 6].
+# Expected Output: [2, 4, 6]
 
-# 6. Find Intersection of Three Lists
-# Write a function `common_in_three(lst1, lst2, lst3)` that returns a list 
-# of elements common in all three lists.
-# Test it with: [1, 2, 3], [2, 3, 4], and [3, 4, 5].
-# Expected Output: [3].
+# 13. Calculate the Sum of a List
+# Write a function `sum_list(lst)` that calculates and returns the sum of all 
+# elements in the list.
+# Test it with: lst = [1, 2, 3, 4, 5].
+# Expected Output: 15
 
-# 7. Find Element Closest to Target
-# Write a function `find_closest(lst, target)` that returns the number 
-# in the list closest to the target.
-# Test it with: [10, 20, 30, 40] and target 25.
-# Expected Output: 20.
+# 14. Find the Maximum Value in a List
+# Write a function `find_max(lst)` that returns the maximum value in the list.
+# Test it with: lst = [1, 2, 3, 4, 5].
+# Expected Output: 5
 
-# 8. Check for Palindrome
-# Write a function `is_palindrome(lst)` that checks whether a list reads 
-# the same forward and backward.
-# Test it with: [1, 2, 3, 2, 1] and [1, 2, 3, 4].
-# Expected Output: True for the first, False for the second.
-
-# 9. Find Maximum Product of Two Numbers
-# Write a function `max_product(lst)` that finds the maximum product of 
-# any two numbers in the list.
-# Test it with: [1, 10, 2, 6, 5].
-# Expected Output: 60 (10 × 6).
-
-# 10. Group Elements by Parity
-# Write a function `group_by_parity(lst)` that groups the even and odd numbers 
-# together in the same list.
-# Test it with: [1, 2, 3, 4, 5, 6].
-# Expected Output: [2, 4, 6, 1, 3, 5].
+# 15. Find the Minimum Value in a List
+# Write a function `find_min(lst)` that returns the minimum value in the list.
+# Test it with: lst = [1, 2, 3, 4, 5].
+# Expected Output: 1

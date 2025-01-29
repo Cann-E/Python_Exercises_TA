@@ -67,3 +67,9 @@ def list_length():
 # Call the function
 print("Number of elements in the list:", list_length())
 
+
+#8   average
+
+def calculate_average(self):
+    return sum(self.marks)/len(self.marks)  #total sum of the numbers in the list divided by the size of the list
+

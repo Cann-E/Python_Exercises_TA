@@ -3,10 +3,33 @@
 # Test it with: [1, 2, 3, 4, 5].
 # Expected Output: [2, 4, 6, 8, 10]
 
+def double_elements(lst):
+    double_=[]
+    for i in lst:
+        double_.append(i*2)
+    return double_
+        
+
+a=[1, 2, 3, 4, 5]
+b=double_elements(a)
+print(b)
+
+
 # 2. Create a List of Squares
 # Write a function `square_elements(lst)` that returns a list of squares of the elements in the input list.
 # Test it with: [1, 2, 3, 4].
 # Expected Output: [1, 4, 9, 16]
+
+def square_elements(lst):
+    square_=[]
+    for i in lst:
+        square_.append(i**2)
+    return square_
+
+c=[1, 2, 3, 4]
+d=square_elements(c)
+print(d)
+
 
 # 3. Combine Two Lists
 # Write a function `combine_lists(lst1, lst2)` that combines two lists element by element.
@@ -14,15 +37,53 @@
 # Test it with: [1, 2, 3], [4, 5, 6].
 # Expected Output: [5, 7, 9]
 
+def combine_(lst1,lst2):
+    comb=[]
+    for i in range(len(lst1)):       
+        comb.append(lst1[i]+lst2[i])
+    return comb
+            
+    
+        
+
+x=[1, 2, 3]
+y=[4, 5, 6]
+
+print(combine_(x,y))
+
 # 4. Remove Negative Numbers
 # Write a function `remove_negatives(lst)` that removes all negative numbers from the list.
 # Test it with: [1, -2, 3, -4, 5].
 # Expected Output: [1, 3, 5]
 
+def remove_negative(lst):
+    for i in lst[:]:   # Use lst[:] to iterate over a copy of the list
+        if i<0:
+            lst.remove(i)                       
+            
+ab=[1, -2, 3, -4, 5]
+
+remove_negative(ab)
+print(ab)
+
+#########ALTERNATE
+
+def remove_negatives(lst):
+    return [i for i in lst if i >= 0]  # Keep only non-negative numbers
+
+# Test case
+ab = [1, -2, 3, -4, 5]
+cd = remove_negatives(ab)
+print(cd)  # Expected Output: [1, 3, 5]
+
+
 # 5. Find the Largest Element
 # Write a function `find_largest(lst)` that returns the largest number in the list without using `max()`.
 # Test it with: [10, 20, 4, 45, 99].
 # Expected Output: 99
+
+
+
 
 # 6. Count Vowels in a List of Strings
 # Write a function `count_vowels(lst)` that counts the total number of vowels in a list of strings.

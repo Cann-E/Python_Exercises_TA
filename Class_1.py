@@ -106,6 +106,42 @@ maserati.Start()
 #   - `"C"` if 50–74
 #   - `"F"` otherwise.
 
+
+class Student:
+    def __init__(self, name, roll_number, marks):
+        """Initialize student attributes"""
+        self.name = name
+        self.roll_number = roll_number
+        self.marks = marks  # List of marks in 3 subjects
+
+    def calculate_average(self):
+        """Calculate and return the average marks"""
+        return sum(self.marks) / len(self.marks)
+
+    def get_grade(self):
+        """Return the grade based on average marks"""
+        avg = self.calculate_average()
+        if avg >= 90:
+            return "A"
+        elif avg >= 75:
+            return "B"
+        elif avg >= 50:
+            return "C"
+        else:
+            return "F"
+
+# Test the Student class
+student1 = Student("Alice", 101, [85, 90, 78])  # Create a student object
+
+print(f"Name: {student1.name}")
+print(f"Roll Number: {student1.roll_number}")
+print(f"Average Marks: {student1.calculate_average():.2f}")
+print(f"Grade: {student1.get_grade()}")
+
+            
+
+
+
 # 6. Book Class
 # Create a class `Book` with attributes:
 # - `title`
@@ -113,6 +149,18 @@ maserati.Start()
 # - `price`
 # Add a method `display_info()` that prints:
 # "Book: [title], Author: [author], Price: $[price]"
+
+
+class Book():
+    def __init__(self,title,author,price):
+        self.title=title
+        self.author=author
+        self.price=price
+    def display_info(self):
+        print(f"{self.title},Author {self.author},Price:{self.price}")
+        
+can_book=Book("Dance","Susan",21)
+can_book.display_info()
 
 # 7. Dog Class
 # Create a class `Dog` with attributes:
@@ -123,6 +171,25 @@ maserati.Start()
 # - `bark()` that prints: "Woof! Woof!"
 # - `description()` that prints: "My name is [name], I am a [age]-year-old [breed]."
 
+
+class Dog():
+    def __init__(self,name,breed,age):
+        self.name=name
+        self.breed=breed
+        self.age=age
+    def bark(self):
+        print("WOOF,WOOF")
+        
+    def description(self):
+        print(f"My name is {self.name}, I am a {self.age} year old {self.breed}")
+        
+remy=Dog("Remy","French Bulldog",9)
+
+remy.bark()
+remy.description()
+         
+        
+
 # 8. Employee Class
 # Create a class `Employee` with attributes:
 # - `name`
@@ -131,6 +198,8 @@ maserati.Start()
 # Add methods:
 # - `give_raise(amount)` to increase the salary by the given amount.
 # - `display_info()` to print the employee’s information.
+
+
 
 # 9. Library Class
 # Create a class `Library` with attributes:

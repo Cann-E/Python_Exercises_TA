@@ -31,3 +31,58 @@ print(letters_4)
 #Remove clear() to empty the list
 
 
+
+#List Comprehension
+#Conver a list of string to Uppercase
+
+words = ["hello", "world", "python"]
+
+uppercase_words = []
+for word in words:
+    uppercase_words.append(word.upper())
+
+print(uppercase_words)  # Output: ['HELLO', 'WORLD', 'PYTHON']
+
+#####SHORTER WAY
+
+words = ["hello", "world", "python"]
+
+uppercase_words = [word.upper() for word in words]
+
+print(uppercase_words)  # Output: ['HELLO', 'WORLD', 'PYTHON']
+
+
+
+#GET ONLY NUMBERS GREATER THAN 5
+
+
+numbers = [2, 5, 8, 1, 10, 3]
+
+greater_than_five = []
+for num in numbers:
+    if num > 5:
+        greater_than_five.append(num)
+
+print(greater_than_five)  # Output: [8, 10]
+
+####ALTERNATE SHORTER 
+
+
+numbers = [2, 5, 8, 1, 10, 3]
+
+greater_than_five = [num for num in numbers if num > 5]
+
+print(greater_than_five)  # Output: [8, 10]
+
+
+
+
+
+
+
+
+
+
+
+
+

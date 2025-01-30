@@ -12,22 +12,22 @@ Users can view all employees in the system.
 Users can search for an employee by name dynamically.
 Users can update an employee's salary dynamically.
 Features to Implement
+
 1. Define an Employee Class
 Attributes:
-
 name (string)
 employee_id (unique identifier for each employee)
 position (string)
 salary (float)
-Methods:
 
+Methods:
 update_salary(new_salary): Updates the employee's salary.
+
 2. Define an EmployeeManagement Class
 Attributes:
-
 employee_list (list of Employee objects)
-Methods:
 
+Methods:
 add_employee(employee): Adds a new employee to the system.
 remove_employee(employee_id): Removes an employee using their unique ID.
 display_employees(): Displays all employees in the system.

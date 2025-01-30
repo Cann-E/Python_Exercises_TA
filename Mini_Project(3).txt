@@ -12,22 +12,22 @@ Users can view all members in the system.
 Users can search for a member by name.
 Users can update a member's contact information.
 Features to Implement
+
 1. Define a Member Class
 Attributes:
-
 name (string)
 member_id (unique identifier for each member)
 email (string)
 phone_number (string)
-Methods:
 
+Methods:
 update_contact(email=None, phone_number=None): Updates the member's email and/or phone number.
+
 2. Define a LibraryMemberManagement Class
 Attributes:
-
 members_list (list of Member objects)
-Methods:
 
+Methods:
 add_member(member): Adds a new member to the system.
 remove_member(member_id): Removes a member using their unique ID.
 display_members(): Displays all members in the system.

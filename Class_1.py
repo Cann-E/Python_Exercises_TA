@@ -239,7 +239,7 @@ class Library():
         
     def remove_(self,title_):
         self.title_=title_
-        self.title.remove(self.books)
+        self.books.remove(self.title_)
         print(f"{self.title_} is removed to library {self.books}")
         
     def display_(self):
@@ -260,6 +260,23 @@ can_library.display_()
 # Add methods:
 # - `area()` to calculate the circle’s area (πr²).
 # - `circumference()` to calculate the circle’s circumference (2πr).
+import math
+
+class Circle():
+    def __init__(self,radius):
+        self.radius=radius
+        
+    def area(self):
+        area_=math.pi*self.radius**2
+        return area_
+    
+    def circumference(self):
+        circum=2*math.pi*self.radius
+        return circum
+    
+can_circle=Circle(12)
+print(can_circle.area())
+print(can_circle.circumference())
 
 
 

@@ -33,15 +33,7 @@ class Employee():
 # display_employees(): Displays all employees in the system.
 # search_employee(name): Searches for an employee by name.
 # update_employee_salary(employee_id, new_salary): Updates an employee's salary.
-# 3. Create a Dynamic Menu for Interaction
-# Add a command-line menu to interact with the user dynamically. Options include:
 
-# Add an employee.
-# Remove an employee.
-# View all employees.
-# Search for an employee.
-# Update an employee's salary.
-# Exit.
 
 
 class EmployeeManagement():
@@ -92,6 +84,14 @@ class EmployeeManagement():
 
 
 
+# 3. Create a Dynamic Menu for Interaction
+# Add a command-line menu to interact with the user dynamically. Options include:
 
+# Add an employee.
+# Remove an employee.
+# View all employees.
+# Search for an employee.
+# Update an employee's salary.
+# Exit.
 
         

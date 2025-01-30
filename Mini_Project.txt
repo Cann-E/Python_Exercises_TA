@@ -1,0 +1,25 @@
+
+Project Overview
+You will create a Library Management System where:
+
+Users can add books to the library.
+Users can remove books from the library.
+Users can view the list of available books.
+Users can search for a book.
+Users can borrow and return books.
+
+👨‍💻 Features to Implement
+
+1-Define a Book class with attributes:
+title (string)
+author (string)
+isbn (unique identifier for books)
+available (Boolean: True if available, False if borrowed)
+
+2-Define a Library class that will store books in a list and provide methods:
+add_book(book): Adds a new book to the library.
+remove_book(isbn): Removes a book from the library using its ISBN.
+display_books(): Displays all available books.
+search_book(title): Finds a book by title.
+borrow_book(isbn): Marks a book as borrowed.
+return_book(isbn): Marks a book as available again.

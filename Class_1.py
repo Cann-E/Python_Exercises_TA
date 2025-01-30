@@ -199,6 +199,25 @@ remy.description()
 # - `give_raise(amount)` to increase the salary by the given amount.
 # - `display_info()` to print the employee’s information.
 
+class Employee():
+    def __init__(self,name,id_number,salary):
+        self.name=name
+        self.id_number=id_number
+        self.salary=salary
+        
+    def give_raise(self,amount):
+        self.amount=amount
+        self.salary+=self.amount
+        
+    def info_(self):
+        print(f"NAME: {self.name},ID: {self.id_number},SALARY: {self.salary}")
+        
+can=Employee("Can","223456",90000)
+
+can.give_raise(20000)
+can.info_()
+
+
 
 
 # 9. Library Class
@@ -208,6 +227,32 @@ remy.description()
 # - `add_book(title)` to add a book to the library.
 # - `remove_book(title)` to remove a book if it exists.
 # - `display_books()` to print the list of all books.
+
+class Library():
+    def __init__(self,books=[]):
+        self.books=books
+        
+    def add_(self,title):
+        self.title=title
+        self.books.append(self.title)
+        print(f"{self.title} is added to library {self.books}")
+        
+    def remove_(self,title_):
+        self.title_=title_
+        self.title.remove(self.books)
+        print(f"{self.title_} is removed to library {self.books}")
+        
+    def display_(self):
+        print(f"These are all the books in library: {self.books}")
+        
+can_library=Library(["savas","baris","dovus"])
+can_library.display_()
+can_library.add_("yemelo")
+can_library.remove_("savas")
+can_library.display_()
+        
+        
+
 
 # 10. Circle Class
 # Create a class `Circle` with attributes:

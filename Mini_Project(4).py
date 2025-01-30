@@ -94,4 +94,19 @@ class EmployeeManagement():
 # Update an employee's salary.
 # Exit.
 
+res_1=input("Welcome To Employee System: \n"
+            "1-Add Employee\n"
+            "2-Remove an Employee\n"
+            "3-View all Employees\n"
+            "4-Search for an employee\n"
+            "5-Update an employee's salary\n"
+            "6-Exit.\n"
+            ": "
+            
+            ).lower()
+
+while res_1 != "6" or res_1=="exit":
+    if res_1 =="1" or res_1=="add employee":
+        
+
         

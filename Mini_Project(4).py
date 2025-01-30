@@ -94,6 +94,10 @@ class EmployeeManagement():
 # Update an employee's salary.
 # Exit.
 
+employee_management=EmployeeManagement()
+
+
+
 res_1=input("Welcome To Employee System: \n"
             "1-Add Employee\n"
             "2-Remove an Employee\n"
@@ -106,7 +110,15 @@ res_1=input("Welcome To Employee System: \n"
             ).lower()
 
 while res_1 != "6" or res_1=="exit":
+
     if res_1 =="1" or res_1=="add employee":
+        if res_1 == "1" or res_1 == "add employee":
+            name = input("Enter employee name: ")
+            employee_id = input("Enter employee ID: ")
+            position = input("Enter employee position: ")
+            salary = float(input("Enter employee salary: "))
+            employee = Employee(name, employee_id, position, salary)
+            employee_management.add_employee(employee)
         
 
         

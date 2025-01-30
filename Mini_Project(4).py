@@ -66,3 +66,18 @@ class EmployeeManagement():
     def display_employee(self):
         for employee in self.employee_list:
             print(f"Name:{employee.name},ID:{employee.employee_id},Position:{employee.position},Salary:{employee.salary}")
+
+
+    def search_employee(self,name):
+        found=False
+        for employee in self.employee_list:
+            if employee.name==name:
+                print(f"{employee.name} has been found in the system! ")
+                found=True
+                break
+        if not found:
+            print(f"{employee.name} not in the system")
+
+
+    def update_salaray(self,employee_id,new_salary):
+        

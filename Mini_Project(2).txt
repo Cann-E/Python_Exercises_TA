@@ -1,0 +1,25 @@
+Mini Project: Student Management System 🎓
+In this project, you will create a Student Management System where:
+
+✅ Users can add students to a database.
+✅ Users can remove students using their ID.
+✅ Users can view all students in the system.
+✅ Users can search for a student by name.
+✅ Users can update a student’s grades.
+✅ Users can calculate the average grade of a student.
+
+📌 Features to Implement
+1. Define a Student class with attributes:
+name (string)
+student_id (unique identifier for each student)
+grades (list of numbers representing grades)
+Add methods:
+
+add_grade(grade): Adds a new grade to the student's record.
+calculate_average(): Calculates and returns the average grade.
+2. Define a StudentDatabase class that will store students in a list and provide methods:
+add_student(student): Adds a new student to the database.
+remove_student(student_id): Removes a student using their ID.
+display_students(): Displays all students.
+search_student(name): Finds a student by name.
+update_student_grades(student_id, grade): Adds a new grade to a student's record.

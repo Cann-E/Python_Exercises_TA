@@ -76,7 +76,7 @@ class EmployeeManagement():
                 found=True
                 break
         if not found:
-            print(f"{employee.name} not in the system")
+            print(f"{name} not in the system")
 
 
     def update_salaray(self,employee_id,new_salary):

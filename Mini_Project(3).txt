@@ -1,0 +1,35 @@
+
+
+Mini Project: Library Member Management System
+This project is a simpler alternative, similar in complexity to the StudentDatabase project, but focuses on managing library members instead of students.
+
+Project Overview
+You will create a Library Member Management System where:
+
+Users can add members to the system.
+Users can remove members from the system using their unique member ID.
+Users can view all members in the system.
+Users can search for a member by name.
+Users can update a member's contact information.
+Features to Implement
+1. Define a Member Class
+Attributes:
+
+name (string)
+member_id (unique identifier for each member)
+email (string)
+phone_number (string)
+Methods:
+
+update_contact(email=None, phone_number=None): Updates the member's email and/or phone number.
+2. Define a LibraryMemberManagement Class
+Attributes:
+
+members_list (list of Member objects)
+Methods:
+
+add_member(member): Adds a new member to the system.
+remove_member(member_id): Removes a member using their unique ID.
+display_members(): Displays all members in the system.
+search_member(name): Searches for a member by name.
+update_member_contact(member_id, email=None, phone_number=None): Updates a member's contact information.

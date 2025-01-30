@@ -1,0 +1,44 @@
+
+
+Mini Project: Employee Management System with Dynamic Input
+This project is similar to the StudentDatabase project but focuses on managing employees and includes dynamic input to interact with the user via the command line.
+
+Project Overview
+You will build an Employee Management System where:
+
+Users can add employees dynamically by entering their details via input.
+Users can remove employees by entering their Employee ID.
+Users can view all employees in the system.
+Users can search for an employee by name dynamically.
+Users can update an employee's salary dynamically.
+Features to Implement
+1. Define an Employee Class
+Attributes:
+
+name (string)
+employee_id (unique identifier for each employee)
+position (string)
+salary (float)
+Methods:
+
+update_salary(new_salary): Updates the employee's salary.
+2. Define an EmployeeManagement Class
+Attributes:
+
+employee_list (list of Employee objects)
+Methods:
+
+add_employee(employee): Adds a new employee to the system.
+remove_employee(employee_id): Removes an employee using their unique ID.
+display_employees(): Displays all employees in the system.
+search_employee(name): Searches for an employee by name.
+update_employee_salary(employee_id, new_salary): Updates an employee's salary.
+3. Create a Dynamic Menu for Interaction
+Add a command-line menu to interact with the user dynamically. Options include:
+
+Add an employee.
+Remove an employee.
+View all employees.
+Search for an employee.
+Update an employee's salary.
+Exit.

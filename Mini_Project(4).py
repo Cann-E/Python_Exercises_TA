@@ -80,4 +80,18 @@ class EmployeeManagement():
 
 
     def update_salaray(self,employee_id,new_salary):
+        found=False
+        for employee in self.employee_list:
+            if employee.employee_id ==employee_id:
+                employee.update_salary(new_salary)
+                print(f"{employee.name} salary updated to {new_salary}")
+                found=True
+                break
+        if not found:
+            print(f"{employee_id} not found cant be updated!")
+
+
+
+
+
         

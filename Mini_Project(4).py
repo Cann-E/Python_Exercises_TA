@@ -119,6 +119,6 @@ while res_1 != "6" or res_1=="exit":
             salary = float(input("Enter employee salary: "))
             employee = Employee(name, employee_id, position, salary)
             employee_management.add_employee(employee)
-        
+    if
 
         

@@ -19,7 +19,7 @@ class Employee():
         return (f"Name:{self.name},ID:{self.employee_id},Position:{self.position},Salary:{self.salary}")
     
     def update_salary(self,new_salary):
-        self.new_salary=new_salary
+        self.salary=new_salary
 
 
 
@@ -71,7 +71,7 @@ class EmployeeManagement():
             print(f"{name} not in the system")
 
 
-    def update_salaray(self,employee_id,new_salary):
+    def update_salary(self,employee_id,new_salary):
         found=False
         for employee in self.employee_list:
             if employee.employee_id ==employee_id:
@@ -98,27 +98,47 @@ employee_management=EmployeeManagement()
 
 
 
-res_1=input("Welcome To Employee System: \n"
-            "1-Add Employee\n"
-            "2-Remove an Employee\n"
-            "3-View all Employees\n"
-            "4-Search for an employee\n"
-            "5-Update an employee's salary\n"
-            "6-Exit.\n"
-            ": "
-            
-            ).lower()
+while True:
+    res_1 = input(
+        "\nWelcome To Employee System:\n"
+        "1 - Add Employee\n"
+        "2 - Remove an Employee\n"
+        "3 - View all Employees\n"
+        "4 - Search for an Employee\n"
+        "5 - Update an Employee's Salary\n"
+        "6 - Exit\n"
+        "Enter your choice: "
+    ).lower()
 
-while res_1 != "6" or res_1=="exit":
+    if res_1 == "6" or res_1 == "exit":
+        print("Exiting Employee System. Goodbye!")
+        break
 
-    if res_1 =="1" or res_1=="add employee":
-        if res_1 == "1" or res_1 == "add employee":
-            name = input("Enter employee name: ")
-            employee_id = input("Enter employee ID: ")
-            position = input("Enter employee position: ")
-            salary = float(input("Enter employee salary: "))
-            employee = Employee(name, employee_id, position, salary)
-            employee_management.add_employee(employee)
-    if res_1++ "2" or res_1 ==
+    elif res_1 == "1" or res_1 == "add employee":
+        name = input("Enter employee name: ")
+        employee_id = input("Enter employee ID: ")
+        position = input("Enter employee position: ")
+        salary = float(input("Enter employee salary: "))
+        employee = Employee(name, employee_id, position, salary)
+        employee_management.add_employee(employee)
+
+    elif res_1 == "2" or res_1 == "remove an employee":
+        res_2 = input("Enter Employee ID to remove: ")
+        employee_management.remove_employee(res_2)
+
+    elif res_1 == "3" or res_1 == "view all employees":
+        employee_management.display_employee()
+
+    elif res_1 == "4" or res_1 == "search for an employee":
+        search_name = input("Enter Employee Name to search: ")
+        employee_management.search_employee(search_name)
+
+    elif res_1 == "5" or res_1 == "update an employee's salary":
+        res_3 = input("Enter Employee ID to update salary: ")
+        new_salary = float(input("Enter the new salary: "))
+        employee_management.update_salary(res_3, new_salary)
+
+    else:
+        print("Invalid input, please enter a valid choice!")
 
         

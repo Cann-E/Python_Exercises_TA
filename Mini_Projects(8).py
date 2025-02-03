@@ -95,6 +95,66 @@ class EmployeePayroll():
             print(f"ID no match. Department not changed!")
             
     def sort_employees_by_salary(self):
-        self.employee_list.sort(key= lambda employee:)
+        self.employee_list.sort(key= lambda employee: employee.salary)
+        print("Employees sorted by salary!")
+        print(f"{self.employee_list}")
         
+    def filter_employees_by_department(self,department):
+        filtered_list=self.employee_list(list(filter( lambda employee: employee.department == department,self.employee_list)))
+        if filtered_list:
+            print(f"Employee deparment in: {department}")
+            for employee in filtered_list:
+                print(employee)
+        else:
+            print(f"No employees found in the department {department}")
+            
+    def add_employee_bonus(self,employee_id,amount):
+        found = False
+        for id in self.employee_list:
+            if id.employee_id == employee_id:
+                id.add_bonus(amount)
+                print(f"Bonud applied! to {id.employee},{id.name}")
+                found =True
+                break
+        if not found:
+            print(f"Id {id} no match cant apply bonus")
+    
+    def deduct_employee_tax(self,employee_id, amount):
+        found= False
+        for id in self.employee_list:
+            if id.employee_id ==employee_id:
+                id.deduct_tax(amount)
+                print(f"Tax Deducted! from {id.employee} ,{id.name}")
+                found = True
+                break
+        if not found:
+            print(f"Id no match {id} cant deduct tax!")
+    
+    def process_payroll(self):
+        self.employee_list.calculate_net_salary()
+        print(f"Calculated net salaries for all employees {self.employee_list}")
+        
+        
+        
+while True:
+    res1 = input(
+        "\nWelcome To employee System:\n"
+        "1 - Add a employee\n"
+        "2 - Remove a employee\n"
+        "3 - View all employee\n"
+        "4 - Search for an employee\n"
+        "5 - Update a employee salary \n"
+        "6 - Update a employee department\n"
+        "7 - Sort employees by salary\n"
+        "8 - Filter employees by department\n"
+        "9 - Add a bonus to an employee\n"
+        "10 - Deduct tax from an employee's salary\n"
+        "11 - Process payroll and calculate net salaries\n"
+        "12 - Exit\n"
+        "Enter your choice: "
+    ).lower()
+        
+            
+        
+    
     

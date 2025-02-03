@@ -42,7 +42,7 @@ class EmployeePayroll():
     def __init__(self):
         self.employee_list=[]
         
-    def add_employeee(self,employee):
+    def add_employee(self,employee):
         self.employee_list.append(employee)
         print(f"Name: {employee} added to the Payroll!")
         
@@ -55,10 +55,11 @@ class EmployeePayroll():
                 found = True
                 break
         if not found:
-            print(f"Id: {id} not Found in the Payroll System!")
+            print(f"Id: {employee_id} not Found in the Payroll System!")
             
     def display_employee(self):
-        print(f"name: {self.name},id: {self.employee_id},department: {self.department},salary: {self.salary}$,bonus: {self.bonus}$,deductions: {self.deductions}$")
+        for i in self.employee_list:
+            print(f"name: {i.name},id: {i.employee_id},department: {i.department},salary: {i.salary}$,bonus: {i.bonus}$,deductions: {i.deductions}$")
         
     def search_employee(self,name):
         found = False 
@@ -76,7 +77,7 @@ class EmployeePayroll():
         for id in self.employee_list:
             if id.employee_id == employee_id:
                 id.update_salary(new_salary)
-                print(f"Employee {id.name} received a new salary!")
+                print(f"Employee {id} received a new salary!")
                 found = True
                 break
         if not found:
@@ -97,10 +98,11 @@ class EmployeePayroll():
     def sort_employees_by_salary(self):
         self.employee_list.sort(key= lambda employee: employee.salary)
         print("Employees sorted by salary!")
-        print(f"{self.employee_list}")
+        for employee in self.employee_list:
+            print(f"{employee}")
         
     def filter_employees_by_department(self,department):
-        filtered_list=self.employee_list(list(filter( lambda employee: employee.department == department,self.employee_list)))
+        filtered_list=(list(filter( lambda employee: employee.department == department,self.employee_list)))
         if filtered_list:
             print(f"Employee deparment in: {department}")
             for employee in filtered_list:
@@ -113,7 +115,7 @@ class EmployeePayroll():
         for id in self.employee_list:
             if id.employee_id == employee_id:
                 id.add_bonus(amount)
-                print(f"Bonud applied! to {id.employee},{id.name}")
+                print(f"Bonus applied! to {id.name}")
                 found =True
                 break
         if not found:
@@ -124,17 +126,20 @@ class EmployeePayroll():
         for id in self.employee_list:
             if id.employee_id ==employee_id:
                 id.deduct_tax(amount)
-                print(f"Tax Deducted! from {id.employee} ,{id.name}")
+                print(f"Tax Deducted! from {id.name}")
                 found = True
                 break
         if not found:
             print(f"Id no match {id} cant deduct tax!")
     
     def process_payroll(self):
-        self.employee_list.calculate_net_salary()
-        print(f"Calculated net salaries for all employees {self.employee_list}")
+        print("Processing payroll for all employees:")
+        for employee in self.employee_list:
+            employee.calculate_net_salary()
         
         
+        
+can_payroll=EmployeePayroll()   
         
 while True:
     res1 = input(
@@ -153,6 +158,64 @@ while True:
         "12 - Exit\n"
         "Enter your choice: "
     ).lower()
+    
+    if res1 == "1":
+        name=input("Enter Name: ")
+        employee_id=int(input("Enter Employee Id: "))
+        department=input("Enter Department: ")
+        salary=float(input("Enter Salary: "))
+        bonus=float(input("Enter Bonus: "))
+        deductions=float(input("Enter Deductions: "))
+        employee=Employee(name,employee_id,department,salary,bonus,deductions)
+        can_payroll.add_employee(employee)
+        
+    if res1 == "2":
+        employee_id=int(input("Enter Employee Id: "))
+        can_payroll.remove_employee(employee_id)
+        
+    if res1 == "3":
+        can_payroll.display_employee()
+        
+    if res1 == "4":
+        name=input("Enter Name: ")
+        can_payroll.search_employee(name)
+        
+    if res1 =="5":
+        employee_id=int(input("Enter Employee Id: "))
+        new_salary=float(input("Enter a New Salary: "))
+        can_payroll.update_employee_salary(employee_id,new_salary)
+        
+    if res1 == "6":
+        employee_id=int(input("Enter Employee Id: "))
+        new_department=input("Enter a New Department: ")
+        can_payroll.update_employee_department(employee_id,new_department)
+        
+    if res1 == "7":
+        can_payroll.sort_employees_by_salary()
+        
+    if res1 == "8":
+        
+        department=input("Enter Department: ")
+        can_payroll.filter_employees_by_department(department)
+        
+    if res1 == "9":
+        employee_id=int(input("Enter Employee Id: "))
+        _bonus=float(input("Enter Bonus: "))
+        can_payroll.add_employee_bonus(employee_id,_bonus)
+        
+    if res1 == "10":
+        employee_id=int(input("Enter Employee Id: "))
+        tax_deductions=float(input("Enter Deductions: "))
+        can_payroll.deduct_employee_tax(employee_id,tax_deductions)
+        
+    if res1 == "11":
+        
+        can_payroll.process_payroll()
+        
+    if res1 == "12":
+        print("Thank you for using the system!")
+        break
+        
         
             
         

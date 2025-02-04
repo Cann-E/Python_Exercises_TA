@@ -30,11 +30,11 @@ class Student():
     
     def update_major(self,new_major):
         old_major=self.major
-        new_major=self.major
+        self.major=new_major
         print(f"Major Changed from {old_major} to {new_major}")
 
     def update_gpa(self,new_gpa):
-        new_gpa=self.gpa
+        self.gpa=new_gpa
         print(f"Gpa Updated to {new_gpa}")
 
     def enroll_course(self,course_name):
@@ -43,7 +43,7 @@ class Student():
 
 
     def update_course_grade(self,course_name,grade):
-        if course_name.course_name == course_name:
+        if course_name in self.courses:
             self.courses[course_name]=grade
             print(f"Course:{course_name} Grade updated to {grade}")
         else:
@@ -56,9 +56,9 @@ class Student():
                 valid_grades.append(grade)
 
         if valid_grades:
-            self_gpa=sum(valid_grades)/len(valid_grades)  
-            print(f"Gpa is : {self_gpa}")
-            return self_gpa
+            self.gpa=sum(valid_grades)/len(valid_grades)  
+            print(f"Gpa is : {self.gpa}")
+            return self.gpa
         else:
             print("Gpa not available!")
             return None 
@@ -98,6 +98,7 @@ class StudentDatabase():
         found = False
         for id in self.student_list:
             if id.student_id == student_id:
+                self.student_list.remove(id)
                 print(f"Student Id:{id} removed from the system.Name: {id.name}")
                 found =True
                 break
@@ -106,7 +107,7 @@ class StudentDatabase():
 
     def display_students(self):
         for i in self.student_list:
-            print(f"Name: {i.name},Id: {i.student_id},Major: {i.major},Gpa: {i.gpa}")
+            print(f"Name: {i.name},Id: {i.student_id},Major: {i.major},Gpa: {i.gpa}\nCourses:{i.courses}")
 
     def search_Students(self,name):
         found = False
@@ -116,7 +117,7 @@ class StudentDatabase():
                 found =True
                 break
         if not found:
-            print(f"Student {nam} not Found!")
+            print(f"Student {name} not Found!")
 
     def update_student_major(self,student_id,new_major):
         found = False
@@ -210,7 +211,7 @@ while True:
         "8 - Update a student’s course grade\n"
         "9 - Sort students by GPA\n"
         "10 - Filter students by major\n"
-        "11- Exit"
+        "11- Exit\n"
         "Enter your choice: "
     ).lower()
 
@@ -229,4 +230,42 @@ while True:
     if res1 == "3":
         can_studentdatabase.display_students()
 
-    
+    if res1 == "4":
+        name=input("Please Enter Your name: ")
+        can_studentdatabase.search_Students(name)
+
+    if res1 == "5":
+       student_id=int(input("Please Enter Student Id: ")) 
+       new_major=(input("Please Enter the new Major: "))
+       can_studentdatabase.update_student_major(student_id,new_major)
+
+    if res1 == "6":
+        student_id=int(input("Please Enter Student Id: ")) 
+        new_gpa=float(input("Please Enter the new GPA: "))
+        can_studentdatabase.update_student_gpa(student_id,new_gpa)
+
+    if res1 == "7":
+        student_id=int(input("Please Enter Student Id: ")) 
+        new_course=(input("Please Enter the Course name you want to enroll: "))
+        can_studentdatabase.enroll_student_in_courses(student_id,new_course)
+
+    if res1 =="8":
+        student_id=int(input("Please Enter The Student ID: "))
+        course_name=input("Please Enter the Course Name: ")
+        grade=float(input("Please Enter the updated grade: "))
+        can_studentdatabase.update_student_course_grade(student_id,course_name,grade)
+        
+
+    if res1 =="9":
+        can_studentdatabase.sort_students_by_gpa()
+
+
+    if res1 == "10":
+        filter_major=input("Please enter the major you want to filter: ")
+        can_studentdatabase.filter_students_by_major(filter_major)
+
+    if res1 == "11":
+        print("Thank you for using the Student System!")
+        break
+
+

@@ -173,36 +173,12 @@ class StudentDatabase():
         filtered_list=list(filter(lambda student: student.major == major,self.student_list))
         if filtered_list:
             print(f"Filtered with major: {major}")
+            for student in filtered_list:
+                print(student)
+        else:
+            print("No students in that major!")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 # 3. Create a Dynamic Menu for Interaction
 # Users can choose from the following options:
@@ -219,3 +195,38 @@ class StudentDatabase():
 # 📌 Filter students by major
 # 📌 Exit
 
+can_studentdatabase=StudentDatabase()
+
+while True:
+    res1 = input(
+        "\nWelcome To Student Database:\n"
+        "1 - Add a student\n"
+        "2 - Remove a student\n"
+        "3 - View all students\n"
+        "4 - Search for a student\n"
+        "5 - Update a student’s major\n"
+        "6 - Update a student’s GPA\n"
+        "7 - Enroll a student in a course\n"
+        "8 - Update a student’s course grade\n"
+        "9 - Sort students by GPA\n"
+        "10 - Filter students by major\n"
+        "11- Exit"
+        "Enter your choice: "
+    ).lower()
+
+    if res1 == "1":
+        name=input("Please Enter Your name: ")
+        student_id=int(input("Please Enter Student Id: "))
+        major=input("Please Enter Students Major: ")
+        gpa=float(input("Please Enter Students GPA: "))
+        student=Student(name,student_id,major,gpa)
+        can_studentdatabase.add_student(student)
+
+    if res1 == "2":
+        student_id=int(input("Please Enter Student Id: "))
+        can_studentdatabase.remove_student(student_id)
+
+    if res1 == "3":
+        can_studentdatabase.display_students()
+
+    

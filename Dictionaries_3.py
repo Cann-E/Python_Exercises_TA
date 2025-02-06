@@ -41,13 +41,26 @@ copy_2=dict_5.copy()
 copy_["age"]=20
 print(copy_)
 print(dict_5)
+print(copy_==dict_5)
+
 
 
 # Use the update() method to update a dictionary with another dictionary’s values.
 
+dict_6={
+    "name":"can",
+    "age":21,
+    "gender":"m"
+}
 
+dict_7={"name":"mike","age":99,"gender":"f"}
+
+dict_6.update(dict_7)
+print(dict_6)
 
 # Write a program that creates a dictionary, copies it, and checks if they have the same contents but different memory locations.
+
+
 
 # Merge two dictionaries and remove a key from the merged dictionary.
 

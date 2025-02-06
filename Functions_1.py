@@ -123,4 +123,12 @@ def countdown_timer():
 countdown_timer()
 
 
+#11 Reverse 
 
+def reverse_string(string):
+  reversed_string = ""
+  for i in string:
+    reversed_string = i + reversed_string
+  return reversed_string
+
+print(reverse_string("Hello World"))

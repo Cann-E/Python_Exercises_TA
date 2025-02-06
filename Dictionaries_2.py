@@ -40,6 +40,16 @@ if not found:
 
 # Create a dictionary with names as keys and ages as values. Print only the names of people above 25 years old.
 
+dict_can={
+    "can":5,
+    "mike":10,
+    "sarah":26,
+    "jessica":35,
+    "cher":56
+}
+
+
+
 # Print only the values of a dictionary using the values() method inside a loop.
 
 # Print only the keys of a dictionary using the keys() method inside a loop.

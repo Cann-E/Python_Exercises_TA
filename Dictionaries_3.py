@@ -1,21 +1,22 @@
 
+# Copying and Merging Dictionaries (21-30)
 
-# 1. Create a dictionary where the keys are numbers from 1 to 10 and the values are their squares.
+# Copy a dictionary using the copy() method and print the copy.
 
-# 2. Given a dictionary of products and prices, increase all prices by 10% and print the updated dictionary.
+# Copy a dictionary using the dict() function and print the copy.
 
-# 3. Write a program that finds and removes all dictionary keys that have None as their value.
+# Merge two dictionaries into one dictionary and print the result.
 
-# 4. Create a nested dictionary representing students and their subjects with grades. Print the student with the highest average grade.
+# Create a dictionary and make two separate copies. Modify one copy and compare it to the original dictionary.
 
-# 5. Given a dictionary of employees and their salaries, find and print the three highest-paid employees.
+# Use the update() method to update a dictionary with another dictionary’s values.
 
-# 6. Given a list of words, create a dictionary where each word is a key and its length is the value.
+# Write a program that creates a dictionary, copies it, and checks if they have the same contents but different memory locations.
 
-# 7. Write a program to group dictionary keys based on the first letter of each key.
+# Merge two dictionaries and remove a key from the merged dictionary.
 
-# 8. Given a dictionary of city names and their populations, find the city with the lowest population.
+# Merge two dictionaries and print only the common keys.
 
-# 9. Create a dictionary from a list of numbers where keys are numbers and values are their occurrences.
+# Create two dictionaries and find keys that exist in both.
 
-# 10. Write a program that sorts a dictionary by its values in descending order and prints the result.
+# Find the difference between two dictionaries (keys that exist in one but not the other).

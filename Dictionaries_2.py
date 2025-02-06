@@ -1,21 +1,22 @@
 
+# Looping Through Dictionaries (11-20)
 
-# 1. Create an empty dictionary and add five key-value pairs dynamically using input().
+# Loop through a dictionary and print all keys.
 
-# 2. Given a dictionary, print all the keys in the dictionary.
+# Loop through a dictionary and print all values.
 
-# 3. Given a dictionary, print all the values in the dictionary.
+# Loop through a dictionary and print all key-value pairs.
 
-# 4. Remove the last key-value pair from a dictionary and print the updated dictionary.
+# Create a dictionary with five key-value pairs and use a loop to print only the keys that start with the letter ‘a’.
 
-# 5. Create a dictionary and swap keys and values (values become keys and keys become values).
+# Create a dictionary with names as keys and ages as values. Print only the names of people above 25 years old.
 
-# 6. Count the number of keys in a given dictionary and print the count.
+# Print only the values of a dictionary using the values() method inside a loop.
 
-# 7. Find and print the key with the lowest value in a dictionary.
+# Print only the keys of a dictionary using the keys() method inside a loop.
 
-# 8. Given a dictionary, create a new dictionary containing only keys that have values greater than 50.
+# Loop through a dictionary and print each key along with its length.
 
-# 9. Convert a string into a dictionary where characters are keys and their frequency in the string is the value.
+# Loop through a dictionary and count how many values are greater than 50.
 
-# 10. Given a dictionary of people and their ages, filter and pri
+# Use a loop to check if a dictionary contains a certain key and print its value if it exists.

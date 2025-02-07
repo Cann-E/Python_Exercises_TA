@@ -52,10 +52,79 @@ dict_can={
 
 # Print only the values of a dictionary using the values() method inside a loop.
 
+dict_can_1={
+    "can":5,
+    "mike":10,
+    "sarah":26,
+    "jessica":35,
+    "cher":56
+}
+
+for i in dict_can_1.values():
+    print(i)
+
+
 # Print only the keys of a dictionary using the keys() method inside a loop.
+
+dict_can_2={
+    "can":5,
+    "mike":10,
+    "sarah":26,
+    "jessica":35,
+    "cher":56
+}
+
+for i in dict_can_2.keys():
+    print(i)
 
 # Loop through a dictionary and print each key along with its length.
 
+dict_can_3={
+    "can":5,
+    "mike":10,
+    "sarah":26,
+    "jessica":35,
+    "cher":56
+}
+
+for i in dict_can_3.keys():
+    print(i,len(i))
+
 # Loop through a dictionary and count how many values are greater than 50.
 
+dict_can_4={
+    "can":5,
+    "mike":10,
+    "sarah":26,
+    "jessica":35,
+    "cher":56
+}
+
+for i in dict_can_4.values():
+    if i>50:
+        count=0
+        count+=1
+        print(count)
+
 # Use a loop to check if a dictionary contains a certain key and print its value if it exists.
+
+dict_can_5 = {
+    "can": 5,
+    "mike": 10,
+    "sarah": 26,
+    "jessica": 35,
+    "cher": 56
+}
+
+key_to_find = "a"  
+
+found = False  
+
+for key in dict_can_5:
+    if key == key_to_find:
+        print(f"Key found: {key}, Value: {dict_can_5[key]}")
+        found = True
+        break  
+
+if not found:
+    print("Key not found")

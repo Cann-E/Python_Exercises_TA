@@ -5,8 +5,8 @@
 
 dict_1={"name":"can","gender":"male","age":50}
 
-for i in dict_1:
-    print(dict_1.keys())
+for i in dict_1.keys():
+    print(i)
 
 # Loop through a dictionary and print all values.
 
@@ -16,15 +16,15 @@ dict_2={
     "sex":"M"
 }
 
-for i in dict_2:
-    print(dict_2.values())
+for i in dict_2.values():
+    print(i)
 
 # Loop through a dictionary and print all key-value pairs.
 
 dict_3={"make":"bmw","model":"m5","year":2020}
 
-for i in dict_3:
-    print(dict_3.items())
+for i in dict_3.items():
+    print(i)
 
 # Create a dictionary with five key-value pairs and use a loop to print only the keys that start with the letter ‘a’.
 
@@ -37,6 +37,8 @@ for i in dict_4:
         found = True
 if not found:
     print("there is no keys start with a")
+    
+print("----------------")
 
 # Create a dictionary with names as keys and ages as values. Print only the names of people above 25 years old.
 
@@ -48,6 +50,9 @@ dict_can={
     "cher":56
 }
 
+for name,age in dict_can.items():
+    if age > 25:
+        print(name)
 
 
 # Print only the values of a dictionary using the values() method inside a loop.
@@ -99,10 +104,10 @@ dict_can_4={
     "jessica":35,
     "cher":56
 }
-
+count=0
 for i in dict_can_4.values():
     if i>50:
-        count=0
+       
         count+=1
         print(count)
 
@@ -116,7 +121,7 @@ dict_can_5 = {
     "cher": 56
 }
 
-key_to_find = "a"  
+key_to_find = "mike"  
 
 found = False  
 

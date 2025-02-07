@@ -29,7 +29,7 @@ nest_dict={
     "student3":{"sarah":19,"major":"English","GPA":2.5}
 }
 
-nest_dict["student4"]="TEST","YOLO","TRY"
+nest_dict["student4"] = {"name": "TEST"}
 print(nest_dict)
 
 # Update a value inside a nested dictionary.

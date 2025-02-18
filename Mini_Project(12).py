@@ -144,6 +144,29 @@ class StudentDatabase:
                 student.enroll_course(course_name)
                 return
         print(f"ID: {student_id} not found, couldn't enroll.")
+        
+        
+    def update_student_course_grade(self,student_id,course_name,grade):
+        """Updates a student grade in a course"""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_course_grade(course_name,grade)
+                return
+        print(f"ID:{student_id} not found,{course_name} grade not updated!")
+        
+    def sort_students_by_gpa(self):
+        self.student_list.sort(key=lambda student:student.gpa)
+        print("Sorted By Gpa")
+        print(self.student_list)
+        
+    def filter_student_by_major(self,major):
+        filtered_list=list(filter(lambda student:student.major==major,self.student_list))
+        if filtered_list:
+            print(f"Filtered with the major:{major}")
+            for student in filtered_list:
+                print(student)
+            else:
+                print("No student in that major!")
 
    
 
@@ -168,3 +191,35 @@ class StudentDatabase:
 # # 📌 Sort students by GPA
 # # 📌 Filter students by major
 # # 📌 Exit
+
+
+can_studentbase=StudentDatabase()
+
+while True:
+    res1 = input(
+        "\nWelcome To Student Database:\n"
+        "1 - Add a student\n"
+        "2 - Remove a student\n"
+        "3 - View all students\n"
+        "4 - Search for a student\n"
+        "5 - Update a student’s major\n"
+        "6 - Update a student’s GPA\n"
+        "7 - Enroll a student in a course\n"
+        "8 - Update a student’s course grade\n"
+        "9 - Sort students by GPA\n"
+        "10 - Filter students by major\n"
+        "11- Exit\n"
+        "Enter your choice: "
+    ).lower()
+    
+    if res1 == "1":
+        name=input("Please Enter Student Name: ")
+        student_id=int(input("Please ENter student id: "))
+        major=input("Please Enter Major: ")
+        gpa=float(input("Please Enter Student Gpa: "))
+        student=Student(name,student_id,major,gpa)
+        can_studentbase.add_student(student)
+        
+    if res1=="2":
+        student_id=int(input("Please ENter student id: "))
+        can_studentbase.remove_student(student_id)

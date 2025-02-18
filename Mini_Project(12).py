@@ -23,6 +23,9 @@ class Student():
         self.gpa=gpa
         self.courses=courses or {}
         
+    def __str__(self):
+        return f"Name:{self.name},ID:{self.student_id},Major:{self.major},Gpa:{self.gpa}"
+        
     def update_major(self,new_major):
         old_major=self.major
         self.major=new_major
@@ -84,7 +87,68 @@ class Student():
 # # filter_students_by_major(major): Filters students based on a specific major.
 
 
+class StudentDatabase:
+    def __init__(self):
+        self.student_list = []
+        
+    def add_student(self, student):
+        """Adds a new student to the system."""
+        self.student_list.append(student)
+        print(f"Student {student.name} (ID: {student.student_id}) has been added to the system!")
 
+    def remove_student(self, student_id):
+        """Removes a student using their unique ID."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                self.student_list.remove(student)
+                print(f"ID: {student_id}, Name: {student.name} has been removed!")
+                return
+        print(f"ID: {student_id} not found in the system!")
+
+    def display_students(self):
+        """Displays all students in the system."""
+        if not self.student_list:
+            print("No students in the database.")
+            return
+        for student in self.student_list:
+            print(student)  # Uses the __str__ method of Student
+
+    def search_student(self, name):
+        """Searches for a student by name."""
+        for student in self.student_list:
+            if student.name == name:
+                print(f"Student found: {student}")
+                return
+        print(f"Name: {name} not found!")
+
+    def update_student_major(self, student_id, new_major):
+        """Updates a student's major."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_major(new_major)
+                return
+        print(f"ID: {student_id} not found, can't change major.")
+
+    def update_student_gpa(self, student_id, new_gpa):
+        """Updates a student's GPA."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_gpa(new_gpa)
+                return
+        print(f"ID: {student_id} not found, can't update GPA.")
+
+    def enroll_student_in_course(self, student_id, course_name):
+        """Enrolls a student in a course."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.enroll_course(course_name)
+                return
+        print(f"ID: {student_id} not found, couldn't enroll.")
+
+   
+
+            
+            
 
 
 

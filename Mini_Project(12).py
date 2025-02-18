@@ -223,3 +223,15 @@ while True:
     if res1=="2":
         student_id=int(input("Please ENter student id: "))
         can_studentbase.remove_student(student_id)
+        
+    if res1=="3":
+        can_studentbase.display_students()
+        
+    if res1=="4":
+        name=(input("Please Enter Students Nmae: "))
+        can_studentbase.search_student(name)
+        
+    if res1=="5":
+        student_id=int(input("Please Enter Student id: "))
+        new_major=input("Please Enter the new major you want to change: ")
+        can_studentbase.update_student_major(student_id,new_major)

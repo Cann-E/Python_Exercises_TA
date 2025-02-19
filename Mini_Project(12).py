@@ -24,7 +24,11 @@ class Student():
         self.courses=courses or {}
         
     def __str__(self):
+<<<<<<< HEAD
+        return f"Name:{self.name},Id:{self.id},Major:{self.major},Gpa:{self.gpa}\n Courses:{self.courses}"
+=======
         return f"Name:{self.name},ID:{self.student_id},Major:{self.major},Gpa:{self.gpa}"
+>>>>>>> ff263ffafadedfac74e635dba5d6dfcf32713c67
         
     def update_major(self,new_major):
         old_major=self.major
@@ -87,6 +91,41 @@ class Student():
 # # filter_students_by_major(major): Filters students based on a specific major.
 
 
+<<<<<<< HEAD
+class StudentDatabase():
+    def __init__(self):
+        self.student_list=[]
+        
+    def add_student(self,student):
+        self.student_list.append(student)
+        print(f"{student} added to the system")
+        
+    def remove_student(self,student_id):
+        found=False
+        for student in self.student_list:
+            if student.student_id==student_id:
+                self.student_list.remove(student)
+                print(f"Student with id:{student_id},name:{student.name} removed from the system!")
+                found=True
+                break
+        if not found:
+                print(f"{student_id} not in the system!")
+                
+    def display_student(self):
+        for stu in self.student_list:
+            print(f"Name:{stu.name},Id:{stu.id},Major:{stu.major},Gpa:{stu.gpa}")
+        
+    def search_student(self,name):
+        found=False
+        for nam in self.student_list:
+            if nam.name==name:
+                print(f"{name} has been found in the system!")
+                found=False
+                break
+        if not found:
+            print(f"{name} not found in the system")
+        
+=======
 class StudentDatabase:
     def __init__(self):
         self.student_list = []
@@ -172,6 +211,7 @@ class StudentDatabase:
 
             
             
+>>>>>>> ff263ffafadedfac74e635dba5d6dfcf32713c67
 
 
 

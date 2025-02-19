@@ -24,7 +24,11 @@ class Student():
         self.courses=courses or {}
         
     def __str__(self):
+<<<<<<< HEAD
         return f"Name:{self.name},Id:{self.id},Major:{self.major},Gpa:{self.gpa}\n Courses:{self.courses}"
+=======
+        return f"Name:{self.name},ID:{self.student_id},Major:{self.major},Gpa:{self.gpa}"
+>>>>>>> ff263ffafadedfac74e635dba5d6dfcf32713c67
         
     def update_major(self,new_major):
         old_major=self.major
@@ -87,6 +91,7 @@ class Student():
 # # filter_students_by_major(major): Filters students based on a specific major.
 
 
+<<<<<<< HEAD
 class StudentDatabase():
     def __init__(self):
         self.student_list=[]
@@ -120,6 +125,93 @@ class StudentDatabase():
         if not found:
             print(f"{name} not found in the system")
         
+=======
+class StudentDatabase:
+    def __init__(self):
+        self.student_list = []
+        
+    def add_student(self, student):
+        """Adds a new student to the system."""
+        self.student_list.append(student)
+        print(f"Student {student.name} (ID: {student.student_id}) has been added to the system!")
+
+    def remove_student(self, student_id):
+        """Removes a student using their unique ID."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                self.student_list.remove(student)
+                print(f"ID: {student_id}, Name: {student.name} has been removed!")
+                return
+        print(f"ID: {student_id} not found in the system!")
+
+    def display_students(self):
+        """Displays all students in the system."""
+        if not self.student_list:
+            print("No students in the database.")
+            return
+        for student in self.student_list:
+            print(student)  # Uses the __str__ method of Student
+
+    def search_student(self, name):
+        """Searches for a student by name."""
+        for student in self.student_list:
+            if student.name == name:
+                print(f"Student found: {student}")
+                return
+        print(f"Name: {name} not found!")
+
+    def update_student_major(self, student_id, new_major):
+        """Updates a student's major."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_major(new_major)
+                return
+        print(f"ID: {student_id} not found, can't change major.")
+
+    def update_student_gpa(self, student_id, new_gpa):
+        """Updates a student's GPA."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_gpa(new_gpa)
+                return
+        print(f"ID: {student_id} not found, can't update GPA.")
+
+    def enroll_student_in_course(self, student_id, course_name):
+        """Enrolls a student in a course."""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.enroll_course(course_name)
+                return
+        print(f"ID: {student_id} not found, couldn't enroll.")
+        
+        
+    def update_student_course_grade(self,student_id,course_name,grade):
+        """Updates a student grade in a course"""
+        for student in self.student_list:
+            if student.student_id == student_id:
+                student.update_course_grade(course_name,grade)
+                return
+        print(f"ID:{student_id} not found,{course_name} grade not updated!")
+        
+    def sort_students_by_gpa(self):
+        self.student_list.sort(key=lambda student:student.gpa)
+        print("Sorted By Gpa")
+        print(self.student_list)
+        
+    def filter_student_by_major(self,major):
+        filtered_list=list(filter(lambda student:student.major==major,self.student_list))
+        if filtered_list:
+            print(f"Filtered with the major:{major}")
+            for student in filtered_list:
+                print(student)
+            else:
+                print("No student in that major!")
+
+   
+
+            
+            
+>>>>>>> ff263ffafadedfac74e635dba5d6dfcf32713c67
 
 
 
@@ -139,3 +231,47 @@ class StudentDatabase():
 # # 📌 Sort students by GPA
 # # 📌 Filter students by major
 # # 📌 Exit
+
+
+can_studentbase=StudentDatabase()
+
+while True:
+    res1 = input(
+        "\nWelcome To Student Database:\n"
+        "1 - Add a student\n"
+        "2 - Remove a student\n"
+        "3 - View all students\n"
+        "4 - Search for a student\n"
+        "5 - Update a student’s major\n"
+        "6 - Update a student’s GPA\n"
+        "7 - Enroll a student in a course\n"
+        "8 - Update a student’s course grade\n"
+        "9 - Sort students by GPA\n"
+        "10 - Filter students by major\n"
+        "11- Exit\n"
+        "Enter your choice: "
+    ).lower()
+    
+    if res1 == "1":
+        name=input("Please Enter Student Name: ")
+        student_id=int(input("Please ENter student id: "))
+        major=input("Please Enter Major: ")
+        gpa=float(input("Please Enter Student Gpa: "))
+        student=Student(name,student_id,major,gpa)
+        can_studentbase.add_student(student)
+        
+    if res1=="2":
+        student_id=int(input("Please ENter student id: "))
+        can_studentbase.remove_student(student_id)
+        
+    if res1=="3":
+        can_studentbase.display_students()
+        
+    if res1=="4":
+        name=(input("Please Enter Students Nmae: "))
+        can_studentbase.search_student(name)
+        
+    if res1=="5":
+        student_id=int(input("Please Enter Student id: "))
+        new_major=input("Please Enter the new major you want to change: ")
+        can_studentbase.update_student_major(student_id,new_major)

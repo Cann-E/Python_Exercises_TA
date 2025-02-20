@@ -24,11 +24,7 @@ class Student():
         self.courses=courses or {}
         
     def __str__(self):
-<<<<<<< HEAD
         return f"Name:{self.name},Id:{self.id},Major:{self.major},Gpa:{self.gpa}\n Courses:{self.courses}"
-=======
-        return f"Name:{self.name},ID:{self.student_id},Major:{self.major},Gpa:{self.gpa}"
->>>>>>> ff263ffafadedfac74e635dba5d6dfcf32713c67
         
     def update_major(self,new_major):
         old_major=self.major

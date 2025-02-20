@@ -69,10 +69,30 @@ class EmployeeDatabase():
         self.employee_list=[]
         
     def add_employee(self,employee):
+        #Add Employe
         self.employee_list.append(employee)
         print(f"New Employee added to system.Employee {employee}")
         
     def remove_employee(self,employee_id):
+        #Remove Employee
+        for employee in self.employee_list:
+            if employee.employee_id == employee_id:
+                self.employee_list.remove(employee)
+                print(f"Employee {employee.name} removed from the system!")
+                return
+        print(f"Employee ID:{employee_id} not found!")
+        
+    def display_employee(self):
+        for employee in self.employee_list:
+            print(employee.show_employees())
+            
+    def search_employee(self,name):
+        #Search Employee
+        for employee in self.employee_list:
+            if employee.name == name:
+                print(f"Employee Found,Name:{employee}")    
+                return
+        print(f"{employee} not Found!")
         
 
 

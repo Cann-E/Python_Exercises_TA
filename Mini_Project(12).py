@@ -233,3 +233,8 @@ while True:
         student_id=int(input("Please Enter Student id: "))
         new_major=input("Please Enter the new major you want to change: ")
         can_studentbase.update_student_major(student_id,new_major)
+        
+    if res1 =="6":
+        student_id=int(input("Please Enter student id: "))
+        new_gpa=float(input("Please Enter new gpa: "))
+        can_studentbase.update_student_gpa(student_id,new_gpa)

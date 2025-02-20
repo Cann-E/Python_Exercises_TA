@@ -64,6 +64,16 @@ class  Employee():
 # sort_employees_by_salary(): Sorts employees by salary in descending order and displays them.
 # filter_employees_by_department(department): Filters and displays employees by a specific department.
 
+class EmployeeDatabase():
+    def __init__(self):
+        self.employee_list=[]
+        
+    def add_employee(self,employee):
+        self.employee_list.append(employee)
+        print(f"New Employee added to system.Employee {employee}")
+        
+    def remove_employee(self,employee_id):
+        
 
 
 

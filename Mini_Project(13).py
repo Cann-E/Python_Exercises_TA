@@ -94,6 +94,11 @@ class EmployeeDatabase():
                 return
         print(f"{employee} not Found!")
         
+    def update_employee_department(self,employee_id,new_department):
+        for employee in self.employee_list:
+            if employee.employee_id == employee_id:
+                employee.update_department(new_department)
+        
 
 
 

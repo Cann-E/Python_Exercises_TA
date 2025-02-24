@@ -80,10 +80,11 @@ class StudentDatabase():
     def __init__(self):
         self.student_list=[]
         
+        
     def add_student(self,student):
         self.student_list.append(student)
         print(f"Success! New Student added to System.Name:{Student}")
-        return f"Success! New Student added to System.Name:{Student}"
+        
     
     def remove_student(self,student_id):
         for student in self.student_list:
@@ -98,9 +99,11 @@ class StudentDatabase():
                 break
         else:
             print("Student not Found!")
+            
                 
     def display_students(self):
         print(self)
+        
             
     def search_students(self,name):
         found=False
@@ -110,13 +113,34 @@ class StudentDatabase():
                 found=True
                 res2=input("What would you like to do display or remove student?: ").lower()
                 if res2 == "display":
-                    self.student_list.display_students(student)
+                    print(student)
                     break
                 elif res2 == "remove":
                     self.student_list.remove(student)
                     break
         if not found:
             print("Search Unsuccesful Student Not in the System!")    
+            
+            
+    def update_student_major(self, student_id, new_major):
+        for student in self.student_list:
+            if student.student_id == student_id:
+                res3 = input(f"Do you want to update major (Y/N): ").lower()
+                if res3 == "y":
+                    print("Student major changed!")
+                    student.update_major(new_major)
+                    return
+                elif res3 == "n":
+                    print(f"Name: {student.name} major not changed!")
+                    return
+                else:
+                    print("Invalid input. Please enter Y or N.")
+                    return
+        print("Student not found!")
+        
+
+    
+
 
 
 

@@ -601,13 +601,18 @@ class Student():
         return reversed_dict
             
             
-class Student_2():
+class Classroom(Student):
     def __init__(self):
+        super().__init__(self)
         self.names_2_dict={}
         
-    def merge_dict()
+    def merge_dict(self,class_room_obj):
+        merged_dict=self.names_dict+self.names_2_dict
+        return merged_dict
               
-         
+
+
+class_room=Classroom()
                 
 student=Student()
 student.add_student("can",95)
@@ -632,3 +637,6 @@ print(student.get_all_students())
 print(student.top_student())
 
 print(student.reverse_records())
+
+
+print(Classroom.merge_dict(Student()))

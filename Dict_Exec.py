@@ -603,11 +603,11 @@ class Student():
             
 class Classroom(Student):
     def __init__(self):
-        super().__init__(self)
-        self.names_2_dict={}
+        super().__init__()
+        
         
     def merge_dict(self,class_room_obj):
-        merged_dict=self.names_dict+self.names_2_dict
+        merged_dict={**self.names_dict,**class_room_obj.names_dict}
         return merged_dict
               
 

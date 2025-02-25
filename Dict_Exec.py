@@ -401,7 +401,15 @@ class Student():
         return self.names_dict.items()
     
     def top_student(self):
-        return max(self.names_dict.items())
+        max_grade=max(self.names_dict.values())
+            
+        for student,grade in self.names_dict.items():
+            if grade==max_grade:
+                return student,grade
+        else:
+            print("Student Not Found!")
+            
+            
          
                 
 student=Student()
@@ -428,6 +436,91 @@ print(student.top_student())
 
 # 9-Reverse a Dictionary (Swap Keys and Values)
 # Implement a method reverse_records() that swaps the student names with their grades, making the grades the keys and names the values.
+
+class Student():
+    def __init__(self):
+        self.names_dict={}
+        
+    def add_student(self,new_student,grade):
+        self.names_dict[new_student]=grade
+        print(f"Student added:Name{new_student},Grade:{grade}")
+        
+    def get_grade(self,name):
+        found=False
+        for student in self.names_dict:
+            if student == name:
+                found=True
+                return self.names_dict[student]
+        if not found:
+            print("Student not found!")
+    
+    def has_student(self,name):
+        for student in self.names_dict:
+            if student == name:
+                return True
+        else:
+            return False
+        
+    def update_grade(self,name,new_grade):
+        for student in self.names_dict:
+            if student ==name:
+                self.names_dict[student]=new_grade
+                print(f"Student:{student} new grade:{new_grade}")
+                found=True
+                break
+        if not found:
+            print(f"Student:{student} not found")
+            
+    def remove_student(self,name):
+        for student in self.names_dict:
+            if student ==name:
+                self.names_dict.pop(name)
+                print(f"Student Removed:{name}")
+                found=True
+                break
+        if not found:
+            print(f"Student not found:{name}")
+    
+    def count_students(self):
+        return f"Student Count: {(len(self.names_dict.keys()))}"
+    
+    def get_all_students(self):
+        return self.names_dict.items()
+    
+    def top_student(self):
+        max_grade=max(self.names_dict.values())
+            
+        for student,grade in self.names_dict.items():
+            if grade==max_grade:
+                return student,grade
+        else:
+            print("Student Not Found!")
+            
+    def reverse_records(self):
+              
+         
+                
+student=Student()
+student.add_student("can",95)
+student.add_student("asli",85)
+student.add_student("mike",10)
+student.add_student("charlie",24)
+
+print(student.get_grade("can"))
+print(student.get_grade("asli"))
+
+print(student.has_student("can"))
+print(student.has_student("mike"))
+
+student.update_grade("asli",100)
+
+student.remove_student("can")
+
+print(student.count_students())
+
+print(student.get_all_students())
+
+print(student.top_student())
 
 # 10-Merge Two Dictionary Attributes
 # Create a second class Classroom that stores another dictionary of students.

@@ -497,6 +497,12 @@ class Student():
             print("Student Not Found!")
             
     def reverse_records(self):
+        reversed_dict={}
+        
+        for student,grade in self.names_dict.items():
+            reversed_dict[grade]=student
+        return reversed_dict
+            
               
          
                 
@@ -521,6 +527,8 @@ print(student.count_students())
 print(student.get_all_students())
 
 print(student.top_student())
+
+print(student.reverse_records())
 
 # 10-Merge Two Dictionary Attributes
 # Create a second class Classroom that stores another dictionary of students.

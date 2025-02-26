@@ -639,4 +639,11 @@ print(student.top_student())
 print(student.reverse_records())
 
 
-print(Classroom.merge_dict(Student()))
+classroom1 = Classroom()
+classroom1.add_student("can", 95)
+
+classroom2 = Classroom()
+classroom2.add_student("asli", 85)
+
+merged_students = classroom1.merge_dict(classroom2)  
+print(merged_students)

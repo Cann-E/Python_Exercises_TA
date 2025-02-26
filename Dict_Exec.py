@@ -249,7 +249,7 @@ class Student():
             print(f"Student not found:{name}")
     
     def count_students(self):
-        return f"Student Count: {(len(self.names_dict.keys()))}"
+        return f"Student Count: {(len(self.names_dict.keys()))}" #1
          
                 
 student=Student()

@@ -27,6 +27,7 @@ class Student():
         self.major = major
         self.gpa = gpa
         self.year=year
+        #---
         
     def __str__(self):
         return f"Name: {self.name}, Student ID: {self.student_id}, Major: {self.major}, GPA: {self.gpa}, Year: {self.year}"

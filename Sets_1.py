@@ -1,75 +1,102 @@
+"""
+========================================
+          Understanding Sets
+========================================
+"""
+
+# What is a Set?
+# --------------
+# A set is a collection of unique and unordered elements.
+# Unlike lists, sets do not allow duplicate values, and they do not maintain a specific order.
+
+# Key Features:
+# -------------
+# 1. **Unordered** – Set elements do not have a fixed position.
+# 2. **Unique Elements** – A set automatically removes duplicates.
+# 3. **Mutable** – You can add or remove elements, but you cannot modify existing ones.
+# 4. **Efficient Membership Check** – Checking if an item exists in a set is faster than in a list.
+
+# When to Use a Set?
+# ------------------
+# - When you need a collection of **unique** values.
+# - When you frequently check **if an element exists** in a collection.
+# - When performing **set operations** like union, intersection, and difference.
+
+# Common Set Operations:
+# ----------------------
+# 1. **Adding Elements** – Use `.add()` to add a single element.
+# 2. **Removing Elements** – Use `.remove()` (raises error if missing) or `.discard()` (no error if missing).
+# 3. **Set Union** – Combines two sets and keeps only unique elements.
+# 4. **Set Intersection** – Keeps only the common elements from both sets.
+# 5. **Set Difference** – Returns elements that are in one set but not in the other.
+# 6. **Symmetric Difference** – Returns elements that are in either set, but not both.
+# 7. **Checking Subset/Superset** – Use `.issubset()` and `.issuperset()` to compare sets.
+
+# Example Use Cases:
+# ------------------
+# - **Removing duplicates** from a list.
+# - **Checking common elements** between two sets of data.
+# - **Finding unique words** in a text file.
+# - **Tracking visited pages** in a web application.
+
+
+"""
+========================================
+          Python Learning Sheet:
+                 Sets
+========================================
+"""
+
 # 1. Create a Set
-# Create a set called `fruits_set` containing the names of 5 different fruits.
-# Print the set.
+# Create a set called `fruits_set` containing 5 different fruits.
 
 fruits_set = {"apple", "pear", "strawberry", "raspberry", "watermelon"}
 print(fruits_set)
 
 
-# 2. Access Set Elements
+# 2. Check if an Element Exists in a Set
 # Since sets are unordered, elements cannot be accessed by index.
-# Instead, check if a specific element exists in the set.
-
-fruits_set = {"apple", "pear", "strawberry", "raspberry", "watermelon"}
+# Instead, use 'in' to check for membership.
 
 print("apple" in fruits_set)  # True
 print("banana" in fruits_set)  # False
 
 
 # 3. Add Elements to a Set
-# Add "Mango" to the `fruits_set`.
-# Print the updated set.
+# Use `.add()` to insert a new element.
 
 fruits_set.add("Mango")
 print(fruits_set)
 
 
 # 4. Remove Elements from a Set
-# Remove "apple" from the `fruits_set`.
-# Print the updated set.
+# Use `.remove()` (raises an error if the element is missing).
 
-fruits_set.remove("apple")  # Raises error if element is not found
+fruits_set.remove("apple")
 print(fruits_set)
 
-# Alternative: Use discard() to avoid an error if the element is missing.
+# Alternative: Use `.discard()` to avoid an error if the element is missing.
 fruits_set.discard("banana")  # No error, even if "banana" is not in the set
 
 
 # 5. Set Length
-# Write a function `set_length(s)` that takes a set as input and returns the number of elements in the set.
-# Test it with the `fruits_set`.
+# Write a function `set_length(s)` that returns the number of elements in a set.
 
 def set_length(s):
     return len(s)
 
-print(set_length(fruits_set))
+print(set_length(fruits_set))  # Output depends on set content
 
 
-# 6. Check If Element Exists
-# Write a function `check_element(s, element)` that takes a set and an element.
-# Return True if the element exists in the set, otherwise return False.
-# Test it with "Mango".
+# 6. Iterate Over a Set
+# Use a loop to iterate through set elements.
 
-def check_element(s, element):
-    return element in s
-
-print(check_element(fruits_set, "Mango"))  # True
-print(check_element(fruits_set, "Banana"))  # False
+for fruit in fruits_set:
+    print(fruit)
 
 
-# 7. Iterate Over a Set
-# Write a function `print_set(s)` that takes a set as input and prints each element on a separate line.
-
-def print_set(s):
-    for item in s:
-        print(item)
-
-print_set(fruits_set)
-
-
-# 8. Union of Two Sets
+# 7. Union of Two Sets
 # Write a function `union_sets(set1, set2)` that returns the union of two sets.
-# Test it with: {"a", "b", "c"} and {"c", "d", "e"}.
 
 set1 = {"a", "b", "c"}
 set2 = {"c", "d", "e"}
@@ -80,9 +107,8 @@ def union_sets(set1, set2):
 print(union_sets(set1, set2))  # {'a', 'b', 'c', 'd', 'e'}
 
 
-# 9. Intersection of Two Sets
+# 8. Intersection of Two Sets
 # Write a function `intersection_sets(set1, set2)` that returns the intersection of two sets.
-# Test it with: {"a", "b", "c"} and {"c", "d", "e"}.
 
 def intersection_sets(set1, set2):
     return set1.intersection(set2)
@@ -90,9 +116,8 @@ def intersection_sets(set1, set2):
 print(intersection_sets(set1, set2))  # {'c'}
 
 
-# 10. Difference of Two Sets
+# 9. Difference of Two Sets
 # Write a function `difference_sets(set1, set2)` that returns elements in `set1` but not in `set2`.
-# Test it with: {"a", "b", "c"} and {"c", "d", "e"}.
 
 def difference_sets(set1, set2):
     return set1.difference(set2)
@@ -100,9 +125,8 @@ def difference_sets(set1, set2):
 print(difference_sets(set1, set2))  # {'a', 'b'}
 
 
-# 11. Symmetric Difference of Two Sets
-# Write a function `symmetric_difference_sets(set1, set2)` that returns elements that are in either set, but not both.
-# Test it with: {"a", "b", "c"} and {"c", "d", "e"}.
+# 10. Symmetric Difference of Two Sets
+# Write a function `symmetric_difference_sets(set1, set2)` that returns elements in either set, but not both.
 
 def symmetric_difference_sets(set1, set2):
     return set1.symmetric_difference(set2)
@@ -110,9 +134,8 @@ def symmetric_difference_sets(set1, set2):
 print(symmetric_difference_sets(set1, set2))  # {'a', 'b', 'd', 'e'}
 
 
-# 12. Check Subset and Superset
-# Write functions `is_subset(sub, main)` and `is_superset(main, sub)` to check if one set is a subset or superset of another.
-# Test with: {"a", "b"} and {"a", "b", "c"}.
+# 11. Check Subset and Superset
+# Write functions `is_subset(sub, main)` and `is_superset(main, sub)`.
 
 def is_subset(sub, main):
     return sub.issubset(main)
@@ -127,9 +150,8 @@ print(is_subset(small_set, big_set))  # True
 print(is_superset(big_set, small_set))  # True
 
 
-# 13. Convert a List to a Set
+# 12. Convert a List to a Set
 # Write a function `list_to_set(lst)` that removes duplicates from a list by converting it to a set.
-# Test it with: [1, 2, 2, 3, 4, 4, 5].
 
 def list_to_set(lst):
     return set(lst)

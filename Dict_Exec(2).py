@@ -98,6 +98,15 @@ class StudentDatabase():
             
     def display_students(self):
         print(self)
+        
+    def search_student(self,name):
+        for student in self.student_dict:
+            if student.name==name:
+                print(f"Student found:{student.name}!")
+                found=True
+                break
+        if not found:
+            print("No Matched Student!")
     
         
         

@@ -51,6 +51,11 @@ class Student():
         pattern=r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
         return bool(re.match(pattern,email))
         
+    # @staticmethod	Makes this function independent (not using self).
+    # pattern = r"...regex..."	Defines rules for what an email should look like.
+    # re.match(pattern, email)	Checks if email matches the pattern.
+    # bool(...)	Converts the result to True (valid) or False (invalid).
+
 
 
 
@@ -73,7 +78,29 @@ class Student():
 # validate_student_id(student_id): Ensures student ID is unique.
 
 
-
+class StudentDatabase():
+    def __init__(self):
+        self.student_dict={}
+        
+    def add_students(self,new_student,new_grade):
+        self.student_dict[new_student]=new_grade
+        print(f"Student added to the system {new_student}")
+        
+    def remove_student(self,student_id):
+        for student in self.student_dict:
+            if student.student_id==student_id:
+                print(f"Student has been removed from the dictonary {student.name}")
+                self.student_dict.pop(student)
+                found=True
+                break
+        if not found:
+            print("Student not found!")
+            
+    def display_students(self):
+        print(self)
+    
+        
+        
 
 
 

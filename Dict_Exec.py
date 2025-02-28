@@ -3,7 +3,7 @@
 # Implement a method to add a new student and their grade.
 class Student():
     def __init__(self):
-        self.names_dict={}
+        self.names_dict={}#12
     
     def add_student(self,new_student,grade):
         self.names_dict[new_student]=grade

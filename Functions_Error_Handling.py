@@ -43,3 +43,42 @@ def register_student(student_name,student_age,student_grade):
         print(f"Error:{e}")
         return False
         
+        #--------------------------------------------
+        
+        
+        
+ALLOWED_DEPARTMENTS = ["HR", "Engineering", "Marketing", "Sales", "Finance"]
+
+def validate_employee_name(name):
+    """Ensures the employee's name is at least 3 characters long."""
+    return isinstance(name, str) and len(name) >= 3
+
+def validate_employee_age(age):
+    """Ensures the employee's age is between 18 and 65."""
+    return isinstance(age, int) and 18 <= age <= 65
+
+def validate_employee_department(department):
+    """Ensures the employee's department is in the allowed list."""
+    return department in ALLOWED_DEPARTMENTS
+        
+        
+        
+def validate_employee(employee_name,employee_age,employee_department):
+    if not validate_employee_name(employee_name):
+        raise ValueError("Wrong Name INPUT")
+    if not validate_employee_age(employee_age):
+        raise ValueError("Wrong AGE INPUT")    
+    if not validate_employee_department(employee_department):
+        raise ValueError("WRONG DEPARTMENT INPUT")
+    
+    return True
+
+def register_employee(employee_name,employee_age,employee_department):
+    try:
+        validate_employee(employee_name,employee_age,employee_department)
+        return {"name":employee_name,"age":employee_age,"department":employee_department}
+    
+    except ValueError as e:
+        print(f"Error:{e}")
+        return False
+        

@@ -69,7 +69,7 @@ print(ab)
 #########ALTERNATE
 
 def remove_negatives(lst):
-    return [i for i in lst if i >= 0]  # Keep only non-negative numbers
+    return [i for i in lst if i >= 0]  # Keep only non-negative numbers1
 
 # Test case
 ab = [1, -2, 3, -4, 5]

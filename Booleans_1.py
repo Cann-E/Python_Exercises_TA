@@ -151,4 +151,4 @@ names = []
 if names:  # This is False since the list is empty
     print("List is not empty")
 else:
-    print("List is empty")  # This will print
+    print("List is empty")  # This will print 1

@@ -36,7 +36,7 @@ print(dict_4.values())
 
 # Print all key-value pairs of a dictionary using the items() method.
 dict_5 = {"gender":"F","name":"Susan"}
-print(dict_5.items())
+print(dict_5.items())#1
 
 # Check if a specific key exists in a dictionary using an if statement.
 dict_6={

@@ -41,7 +41,7 @@ print(dict_5.items())#1
 # Check if a specific key exists in a dictionary using an if statement.
 dict_6={
     "book":"Harry Potter",
-    "author":"JK rowlings"
+    "author":"JK rowlings"#112
 }
 
 if "author" in dict_6:

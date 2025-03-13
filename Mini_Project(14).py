@@ -110,7 +110,7 @@ class StudentDatabase():
         found=False
         for student in self.student_list:
             if student.name == name:
-                print("Student Found!")
+                print("Student Found!")#1
                 found=True
                 res2=input("What would you like to do display or remove student?: ").lower()
                 if res2 == "display":
